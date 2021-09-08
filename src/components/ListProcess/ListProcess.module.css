@@ -1,0 +1,23 @@
+.FormProcess{
+    background: #bdcdd6;
+    padding: 10px 22px 22px 22px;
+}
+.FormProcess_block{
+    background: #FFFFFF;
+    height: 252px;
+    margin-top: 12px;
+    padding: 24px;
+}
+.FormProcess_header{
+    color: #6879BB;
+    font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.FormProcess_body{
+    display: flex;
+}
+.numberExecution{
+    width: 280px;
+}

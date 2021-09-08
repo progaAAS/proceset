@@ -1,0 +1,17 @@
+.authForm__error{
+    display: flex;
+    flex-direction: row;
+    
+    background-color: #FFE9DB;
+    height: 100px;
+    width: 100%;
+    margin-top: 30px;
+    padding-top: 50px;
+  }
+  .authForm__Img{
+    margin-left: 60px;
+  }
+  .authForm__Text{
+    margin-left: 20px;
+    margin-top: 10px;
+  }
