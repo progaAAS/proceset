@@ -19,20 +19,20 @@ const userReducer = (state = initialState, action) => {
                 secondName: action.secondName,
                 email: action.email,
                 password: action.password
-                };
-            }
-            case "USER_PASSWORD_DATA":{
-                return{
-                    ...state,
-                    password: action.password
-                    };
-                }
-                case "USER_ERROR_DATA":{
-                    return{
-                        ...state,
-                        errorEmail: action.error
-                        };
-                    }
+            };
+        }
+        case "USER_PASSWORD_DATA":{
+            return{
+                ...state,
+                password: action.password
+            };
+        }
+        case "USER_ERROR_DATA":{
+            return{
+                ...state,
+                errorEmail: action.error
+            };
+        }
         default:
             return state;
     }
@@ -44,9 +44,8 @@ export const setUsers = (firstName, secondName, email, password) =>
 export const setPasswordData = (password) => 
     ({type: "USER_PASSWORD_DATA", password});
 
-    export const setErrorData = (error) =>({
-        type: "USER_ERROR_DATA", error
-    })
-
+export const setErrorData = (error) =>({
+    type: "USER_ERROR_DATA", error
+})
 
 export default userReducer; 

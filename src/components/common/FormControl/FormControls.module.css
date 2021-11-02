@@ -23,3 +23,16 @@
 .formControl{
     height: 60px;
 }
+
+input{
+    display: block;
+    width: 304px;
+    height: 24px;
+    border: 1px solid #D6DCE9;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 19px;
+    color: #6879BB;
+    outline: none;
+}

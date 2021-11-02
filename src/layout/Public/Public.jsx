@@ -1,6 +1,6 @@
-import React from 'react';
-import {ReactComponent as LogoSvg} from '../../img/Vector.svg';
-import s from './public.module.css';
+import React from "react";
+import {ReactComponent as LogoSvg} from "../../img/Vector.svg";
+import s from "./public.module.css";
 
 const Public = ({ children }) => {
 

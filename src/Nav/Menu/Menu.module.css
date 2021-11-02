@@ -11,7 +11,7 @@
 
 .button:active, .button:focus {
     outline: none;
-  }
+}
 
 .textBtn {
     font-family: Open Sans;
@@ -20,10 +20,9 @@
     font-size: 14px;
     line-height: 19px;
     align-items: center;
-
-
     color: #6879BB;
 }
+
 .iconBtn{
     margin-right: 16px;
     display: inline;

@@ -9,16 +9,11 @@ export const email = value =>
 export const requiredLogin = value => value ? undefined : 'Введите логин';
 export const requiredPassword = value => value ? undefined : 'Введите пароль';
 
-  
 export const matchInput = (field, allInputs) =>
 {
-  debugger
     if(field === allInputs.password) return undefined;
-
     return 'Пароли не совпадают';
 }
-  
-
 
 export const passLength = (len) => (value) => {
   return value?.length < len

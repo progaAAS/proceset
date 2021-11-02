@@ -1,25 +1,20 @@
-import s from './App.module.css';
-import Auth from "./components/Auth/Auth";
-import Reg from "./components/Reg/Reg";
 import ListProcess from "./components/ListProcess/ListProcess";
-import {Route, Switch, Redirect} from "react-router-dom";
-import User from "./components/User/User";
+import { Switch } from "react-router-dom";
 import WithLayout from "./layout/WithLayout";
 import Public from "./layout/Public/Public";
 import Private from "./layout/Private/Private";
-
-
-
+import LogInPage from "./components/Auth/LogInPage/LogInPage";
+import SignUpPage from "./components/Auth/SignUpPage/SignUpPage";
+import UserPage from "./components/UserPage/UserPage";
 
 const App = () => {
-  return (<div>
-      <Switch>
-        <WithLayout layout={Public} exact path="/" component={Auth}/>
-        <WithLayout layout={Public} exact path="/registration" component={Reg}/>
-        <WithLayout layout={Private} path="/setting" component={User}/>
-        <WithLayout layout={Private} path="/process" component={ListProcess}/>
-      </Switch>
-    </div>
+  return (
+    <Switch>
+      <WithLayout Layout={Public} exact path="/" AuthComponent={LogInPage}/>
+      <WithLayout Layout={Public} exact path="/registration" AuthComponent={SignUpPage}/>
+      <WithLayout Layout={Private} path="/setting" AuthComponent={UserPage}/>
+      <WithLayout Layout={Private} path="/process" AuthComponent={ListProcess}/>
+    </Switch>
   );
 }
 
