@@ -9,7 +9,6 @@ import { ReactComponent as People } from "../../../img/people.svg";
 import { ReactComponent as Script } from "../../../img/script.svg";
 
 const ProcessItem = (props) => {
-debugger
 
 const declOfNum = (number, titles) => {
     const cases = [2, 0, 1, 1, 1, 2];

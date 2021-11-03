@@ -1,11 +1,14 @@
-import React,  { Component } from "react"
+import React from "react"
 import { Route } from "react-router"
 
-function WithLayout ( {layout, component, ...rest}){
+function WithLayout ({ Layout, AuthComponent, ...rest }){
+
     return (
-        <Route{...rest} render ={ (props)  => 
-            React.createElement( layout, props, React.createElement(component, props))
-    }/>
+        <Route { ...rest }>
+            <Layout>
+                <AuthComponent/>
+            </Layout>
+        </Route>
     );
 }
 
