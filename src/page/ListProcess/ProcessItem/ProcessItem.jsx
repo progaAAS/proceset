@@ -1,7 +1,5 @@
 import React from 'react';
 import s from "./ProcessItem.module.css";
-import { useSelector } from 'react-redux';
-import { map } from "lodash";
 import { ReactComponent as Ring } from "../../../img/ring.svg";
 import { ReactComponent as Time } from "../../../img/time.svg";
 import { ReactComponent as TimeActive } from "../../../img/timeActive.svg";

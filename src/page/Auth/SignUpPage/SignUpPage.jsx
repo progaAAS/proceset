@@ -7,8 +7,8 @@ import { SIGN_UP } from "../../../query/user";
 import { ReactComponent as Eye } from "../../../img/eye.svg";
 import useToggle from "react-use-toggle";
 import { required, requiredSecondName, email, requiredEmail, matchInput, passLength } from "../../../utils/validators";
-import { Input } from "../../common/FormControl/FormControls";
-import Button from "../../common/Button/Button";
+import { Input } from "../../../components/common/FormControl/FormControls";
+import Button from "../../../UI/Button/Button";
 import Error from "../../../UI/Error/Error";
 
 const passwordValidator = passLength(8);
@@ -21,14 +21,18 @@ const SignUpForm = (props) => {
   return <>
       <form className={s.authForm} onSubmit={props.handleSubmit}>
         <div className={s.authForm__forma}>
-          <div className={s.head}>Регистрация</div>
+          <h3 className={s.head}>Регистрация</h3>
           <Field className={s.name} placeholder="Имя" name={"firstName"} validate={[required]} component={Input}/>  
           <Field className={s.fullName} placeholder="Фамилия" name={"secondName"} validate={[requiredSecondName]} component={Input}/>
           <Field className={s.email} placeholder="Электронная почта" name={"email"} validate={[email, requiredEmail]} component={Input}/> 
-          <Field className={s.password} type ={eye ? "text" : "password"} placeholder="Введите пароль" validate={[passwordValidator]} name={"password"} component={Input}/>
-          <a onClick={SetActivateEye} className={s.eye}><Eye className={s.eyeIconReg1}/></a>        
-          <Field className={s.password} type ={eye1 ? "text" : "password"} placeholder="Повторите пароль" validate={[matchInput]} name={"password2"} component={Input}/>
-          <a onClick={SetActivateEye1} className={s.eye}><Eye className={s.eyeIconReg2}/></a> 
+          <div className={s.input}>
+            <Field className={s.password} type ={eye ? "text" : "password"} placeholder="Введите пароль" validate={[passwordValidator]} name={"password"} component={Input}/>
+            <Eye onClick={SetActivateEye} className={s.eyeIconAuth}/>   
+          </div>
+          <div className={s.input}>
+            <Field className={s.password} type ={eye1 ? "text" : "password"} placeholder="Повторите пароль" validate={[matchInput]} name={"password2"} component={Input}/>
+            <Eye onClick={SetActivateEye1} className={s.eyeIconAuth}/>
+          </div>
           <Button className={s.button}>Применить и войти</Button>
           <p className={s.authReg__Link}>Уже зарегистрированы? <NavLink to="/" className={s.link}>Вход</NavLink></p>
         </div>

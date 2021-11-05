@@ -1,8 +1,8 @@
 import React from "react";
 import useToggel from "react-use-toggle";
 import back from "./Private.module.css";
-import Menu from "../../Nav/Menu/Menu";
-import Drower from "../../Nav/Drower/Drower";
+import Menu from "../../components/Nav/Menu/Menu";
+import Drower from "../../components/Nav/Drower/Drower";
 
 const Private = (props) => {
 

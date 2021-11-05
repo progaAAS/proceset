@@ -1,5 +1,5 @@
 import React from 'react';
-import {ReactComponent as ButSvg} from '../../img/Union.svg';
+import {ReactComponent as ButSvg} from '../../../img/Union.svg';
 import s from './Menu.module.css'
 
 const Menu = (props) => {

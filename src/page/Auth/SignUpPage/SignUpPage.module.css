@@ -32,34 +32,24 @@
   width: 330px;
 }
 .authForm .btn{
-    margin-top: 12px;
-    height: 36px;
-    background-color: #FFCE0C;
-    border-radius: 4px;
-    font-family: Arial;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    color: #333333;
-    border: 1px solid #D6DCE9;
+  margin-top: 12px;
+  height: 36px;
+  background-color: #FFCE0C;
+  border-radius: 4px;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  color: #333333;
+  border: 1px solid #D6DCE9;
 }
 .authReg__Link{
   margin-top: 18px;
 }
 .link{
-      color: #3167BA;
+  color: #3167BA;
 }
-.head{
-    align-self: flex-start;
-    margin-bottom: 20px;;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 25px;
-    display: flex;
-    align-items: center;
-    color: #404064;
-}
+
 .eye{
   align-self: flex-end;
   border: none;

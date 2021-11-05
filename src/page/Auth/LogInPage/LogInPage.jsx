@@ -4,13 +4,13 @@ import useToggle from "react-use-toggle";
 import { ReactComponent as Eye } from "../../../img/eye.svg";
 import { NavLink, useHistory } from "react-router-dom";
 import s from "../Auth.module.css";
-import { required } from "../../../utils/validators";
-import { Input } from "../../common/FormControl/FormControls";
+import { required, requiredPassword } from "../../../utils/validators";
+import { Input } from "../../../components/common/FormControl/FormControls";
 import { LOGIN } from "../../../query/login";
 import { useMutation } from "@apollo/client";
 import { useDispatch } from "react-redux";
 import { setPasswordData } from "../../../redux/userReducer";
-import Button from "../../common/Button/Button";
+import Button from "../../../UI/Button/Button";
 import Error from "../../../UI/Error/Error";
 
 
@@ -22,8 +22,10 @@ const LogInForm = (props) => {
       <form className={s.authForm} onSubmit={props.handleSubmit}>
         <div className={s.authForm__forma}>
           <Field className={s.login} placeholder="Логин" name={"email"} validate={[required]} component={Input}/>  
-          <Field className={s.password} type ={eye ? "text" : "password"} placeholder="Пароль" name={"password"} validate={[required]} component={Input}/>
-          <a onClick={SetActivateEye} className={s.eye}><Eye className={s.eyeIconAuth}/></a>
+          <div className={s.input}>
+            <Field className={s.password} type ={eye ? "text" : "password"} placeholder="Пароль" name={"password"} validate={[requiredPassword]} component={Input}/>
+            <Eye onClick={SetActivateEye} className={s.eyeIconAuth}/>
+          </div>
           <Button className={s.button}>Войти в систему</Button>
           <NavLink className={s.activeLink} to="/registration">Зарегистрироваться</NavLink>
         </div>

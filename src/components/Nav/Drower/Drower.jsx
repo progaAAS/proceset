@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Background from "../../UI/Background/Background";
+import Background from "../../../UI/Background/Background";
 import { MenuItems } from "../MenuItems/MenuItems";
 import s from "./Drower.module.css";
 

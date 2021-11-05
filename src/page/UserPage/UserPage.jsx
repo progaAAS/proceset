@@ -4,15 +4,14 @@ import {  required, matchInput, passLength } from "../../utils/validators";
 import useToggle from "react-use-toggle";
 import { Field, reduxForm } from "redux-form";
 import { ReactComponent as Eye } from "../../img/eye.svg";
-import InputText from "../InputText/InputText";
-import Button from "../common/Button/Button";
+import InputText from "../../components/InputText/InputText";
+import Button from "../../UI/Button/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { useMutation } from "@apollo/client";
 import currentUser from "../../query/currentUser";
 import { useQuery } from "@apollo/client";
 import { EDITUSER } from "../../query/editUser";
 import { setPasswordData } from "../../redux/userReducer";
-import { useHistory } from "react-router-dom";
 
 const passwordValidator = passLength(8);
 
@@ -29,7 +28,7 @@ const UserForm = (props) => {
         <div className={s.userName}>
           {`${props.data.currentUser.firstName}` + " " +`${ props.data.currentUser.secondName}`}. Редактирование
         </div>
-        <Button className={s.button}>Сохранить</Button>
+        <Button className={s.button}>{props.toggelBtn}</Button>
       </div>
       <div className={s.container}>
         <Field className={s.firstName} name={"firstName"} placeholder={props.data.currentUser.firstName} validate={[required]} component={InputText} inputText={"Имя"}/>  
@@ -48,9 +47,9 @@ const UserReduxForm = reduxForm({form: 'user'})(UserForm)
 
 const UserPage = () => {
 
-  const history = useHistory()
   const dispatch = useDispatch();
   const [editUser] = useMutation(EDITUSER);
+  const[toggelBtn, setToggelBtn] = useState("Сохранить")
 
   const { loading, data, error } = useQuery(currentUser, {fetchPolicy: "network-only"})
 
@@ -63,7 +62,7 @@ const UserPage = () => {
   }
   
   const onSubmit = (formData) => {
-
+    setToggelBtn("Сохранено")
     const id = data.currentUser.id;
     let firstName = formData.firstName;
     let secondName = formData.secondName;
@@ -72,13 +71,13 @@ const UserPage = () => {
     dispatch(setPasswordData(password));
 
     editUser({variables:{id, email, firstName, secondName, password}}).then(
-      history.push("/process")
+       setTimeout(()=>setToggelBtn("Сохранить"), 3000)
     )}
   
     return <din className={s.authReg}>
       <div className={s.authReg__form}>
         <div className={s.authReg__forma}>
-          <UserReduxForm onSubmit={onSubmit} data={data}/>
+          <UserReduxForm toggelBtn={toggelBtn} onSubmit={onSubmit} data={data}/>
         </div>
       </div>
     </din>
